@@ -6,7 +6,7 @@ authors = ["Manuel Castillo-Lopez <manucalop@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = ">=3.10,<3.11"
+python = ">=3.9,<3.11"
 pyyaml = "^6.0"
 google-cloud-logging = "^3.5.0"
 
