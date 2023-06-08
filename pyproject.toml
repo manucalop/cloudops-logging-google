@@ -1,9 +1,13 @@
 [tool.poetry]
 name = "cloudops-logging-google"
-version = "0.1.2"
+packages = [{ include = "cloudops"}]
+version = "0.1.0"
 description = ""
 authors = ["Manuel Castillo-Lopez <manucalop@gmail.com>"]
+license = "MIT"
+repository = "https://github.com/manucalop/cloudops-logging-google"
 readme = "README.md"
+
 
 [tool.poetry.dependencies]
 python = "^3.9"
