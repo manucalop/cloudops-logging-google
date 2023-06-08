@@ -1,1 +1,0 @@
-env_name: !ENV ${ENV_NAME}
