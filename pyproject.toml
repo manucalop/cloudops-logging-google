@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "cloudops-logging-google"
+version = "0.1.2"
+description = ""
+authors = ["Manuel Castillo-Lopez <manucalop@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.11"
+pyyaml = "^6.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.1.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[project.urls]
+Home = "https://github.com/manucalop/cloudops-logging-google"
