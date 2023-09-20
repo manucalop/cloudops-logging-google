@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "cloudops-logging-google"
 packages = [{ include = "cloudops"}]
-version = "0.1.2"
+version = "0.1.3"
 description = ""
 authors = ["Manuel Castillo-Lopez <manucalop@gmail.com>"]
 license = "MIT"
