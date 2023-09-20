@@ -35,7 +35,7 @@ class CloudopsLogging:
         return False
 
     @staticmethod
-    def _get_local_logger(name: str, level: int = logging.DEBUG) -> logging.Logger:
+    def _get_local_logger(name: str, level: int) -> logging.Logger:
         logger = logging.getLogger(name)
         for handler in logger.handlers:
             logger.removeHandler(handler)
@@ -50,5 +50,5 @@ class CloudopsLogging:
 cloudops_logging = CloudopsLogging()
 
 
-def get_logger(name, level) -> logging.Logger:
+def get_logger(name: str, level: int = logging.DEBUG) -> logging.Logger:
     return cloudops_logging.get_logger(name, level)
