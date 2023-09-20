@@ -11,7 +11,9 @@ class CloudopsLogging:
             client = google.cloud.logging.Client()
             client.setup_logging()
 
-    def get_logger(self, name: str, level: int = logging.DEBUG) -> logging.Logger:
+    def get_logger(
+        self, name: str, level: int = logging.DEBUG
+    ) -> logging.Logger:
         if self.running_on_gcloud:
             return self._get_google_cloud_logger(name)
         else:
@@ -40,7 +42,9 @@ class CloudopsLogging:
         for handler in logger.handlers:
             logger.removeHandler(handler)
         handler = logging.StreamHandler()
-        formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+        formatter = logging.Formatter(
+            "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+        )
         handler.setFormatter(formatter)
         logger.addHandler(handler)
         logger.setLevel(level)
