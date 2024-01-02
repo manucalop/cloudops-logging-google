@@ -1,4 +1,5 @@
 import logging
+import colorlog
 import os
 
 import google.cloud.logging
@@ -42,8 +43,8 @@ class CloudopsLogging:
         for handler in logger.handlers:
             logger.removeHandler(handler)
         handler = logging.StreamHandler()
-        formatter = logging.Formatter(
-            "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+        formatter = colorlog.ColoredFormatter(
+            "%(reset)s%(asctime)s - %(name)s - %(log_color)s%(levelname)s%(reset)s - %(message)s"
         )
         handler.setFormatter(formatter)
         logger.addHandler(handler)
