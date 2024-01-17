@@ -42,9 +42,15 @@ class CloudopsLogging:
         for handler in logger.handlers:
             logger.removeHandler(handler)
         handler = logging.StreamHandler()
-        formatter = logging.Formatter(
-            "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-        )
+        try:
+            import colorlog
+            formatter = colorlog.ColoredFormatter(
+                "%(reset)s%(asctime)s - %(name)s - %(log_color)s%(levelname)s%(reset)s - %(message)s"
+            )
+        except ImportError:
+            formatter = logging.Formatter(
+                "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+            )
         handler.setFormatter(formatter)
         logger.addHandler(handler)
         logger.setLevel(level)
